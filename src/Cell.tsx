@@ -2,11 +2,13 @@ import React from 'react'
 
 interface Props {
   render?: (x: number, y: number, ratio: number) => {}
+  renderTooltip?: (value: string | undefined) => {}
   posX: number
   posY: number
   style?: (x: number, y: number, ratio: number) => {}
   ratio: number
   value: number
+  tooltip?: string
   height?: string
   square?: boolean
   onClick?: (x: number, y: number) => void
@@ -16,6 +18,7 @@ const noop = (returnVal: any) => () => returnVal
 
 const Cell = ({
   render = noop(null),
+  renderTooltip = noop(null),
   style = noop({}),
   ratio,
   posX,
@@ -23,8 +26,12 @@ const Cell = ({
   square = false,
   height = '2rem',
   value,
+  tooltip,
   onClick
 }: Props) => {
+
+  console.log(tooltip);
+
   return (
     <div
       onClick={() => (onClick || noop({}))(posX, posY)}
@@ -47,7 +54,10 @@ const Cell = ({
         ...style(posX, posY, ratio)
       }}
     >
-      {render(posX, posY, value)}
+      <div>
+        {render(posX, posY, value)}
+        {renderTooltip(tooltip)}
+      </div>
     </div>
   )
 }

@@ -11,6 +11,7 @@ interface Props {
   data: number[][]
   xLabels?: string[]
   yLabels?: string[]
+  tooltip?: string[][]
   cellHeight?: string
   square?: boolean
   xLabelsPos?: 'top' | 'bottom'
@@ -33,6 +34,7 @@ export const HeatMapGrid = ({
   data,
   xLabels,
   yLabels,
+  tooltip,
   xLabelsPos = 'top',
   yLabelsPos = 'left',
   square = false,
@@ -85,6 +87,7 @@ export const HeatMapGrid = ({
                   posY={yi}
                   onClick={onClick}
                   value={value}
+                  tooltip={tooltip && tooltip[xi][yi]}
                   height={cellHeight}
                   square={square}
                   render={cellRender}
