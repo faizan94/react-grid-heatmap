@@ -10,7 +10,15 @@ const data = new Array(yLabels.length)
   .map(() =>
     new Array(xLabels.length)
       .fill(0)
-      .map(() => Math.floor(Math.random() * Math.random() * 200))
+      .map(() => Math.floor(Math.random()  * 100))
+  )
+
+const tooltip = new Array(yLabels.length)
+  .fill(0)
+  .map(() =>
+    new Array(xLabels.length)
+      .fill(0)
+      .map(() => Math.floor(Math.random() * 100).toString() )
   )
 
 describe('The HeatMapGrid component', () => {
@@ -64,6 +72,7 @@ describe('The HeatMapGrid component', () => {
         data={data}
         xLabels={xLabels}
         yLabels={yLabels}
+        tooltip={tooltip}
         cellRender={(x, y, value) => (
           <div title={`Pos(${x}, ${y}) = ${value}`}>{value}</div>
         )}
@@ -82,9 +91,9 @@ describe('The HeatMapGrid component', () => {
           color: `rgb(0, 0, 0, ${ratio / 2 + 0.4})`
         })}
         cellHeight='2rem'
+        cellWidth='3rem'
         xLabelsPos='bottom'
         yLabelsPos='right'
-        square
       />
     )
     expect(screen.getByText('Sun')).toBeInTheDocument()

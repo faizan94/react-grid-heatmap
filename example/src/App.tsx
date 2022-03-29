@@ -10,6 +10,14 @@ const data = new Array(yLabels.length)
       .map(() => Math.floor(Math.random() * 50 + 50))
   )
 
+const tooltip = new Array(yLabels.length)
+  .fill(0)
+  .map(() =>
+    new Array(xLabels.length)
+      .fill(0)
+      .map(() => Math.floor(Math.random() * 50 + 50).toString() )
+  )
+
 const App = () => {
   return (
     <div
@@ -21,6 +29,7 @@ const App = () => {
         data={data}
         xLabels={xLabels}
         yLabels={yLabels}
+        tooltip={tooltip}
         // Render cell with tooltip
         cellRender={(x, y, value) => (
           <div title={`Pos(${x}, ${y}) = ${value}`}>{value}</div>
@@ -39,11 +48,11 @@ const App = () => {
           fontSize: '.8rem',
           color: `rgb(0, 0, 0, ${ratio / 2 + 0.4})`
         })}
-        cellHeight='2rem'
+        cellHeight='3rem'
+        cellWidth='4rem'
         xLabelsPos='bottom'
-        onClick={(x, y) => alert(`Clicked (${x}, ${y})`)}
+        onClick={(x, y) => console.log(`Clicked (${x}, ${y})`)}
         yLabelsPos='right'
-        square
       />
     </div>
   )

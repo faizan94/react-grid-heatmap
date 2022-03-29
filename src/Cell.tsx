@@ -1,36 +1,33 @@
-import React from 'react'
+import React from 'react';
+import Tooltip from "./Tooltip";
 
 interface Props {
   render?: (x: number, y: number, ratio: number) => {}
   renderTooltip?: (value: string | undefined) => {}
   posX: number
   posY: number
-  style?: (x: number, y: number, ratio: number) => {}
+  cellStyle?: (x: number, y: number, ratio: number) => {}
   ratio: number
   value: number
   tooltip?: string
   height?: string
-  square?: boolean
+  width?: string
   onClick?: (x: number, y: number) => void
 }
 
 const noop = (returnVal: any) => () => returnVal
 
 const Cell = ({
-  render = noop(null),
-  renderTooltip = noop(null),
-  style = noop({}),
+  cellStyle = noop({}),
   ratio,
   posX,
   posY,
-  square = false,
-  height = '2rem',
+  height = '3rem',
+  width = '3rem',
   value,
   tooltip,
   onClick
 }: Props) => {
-
-  console.log(tooltip);
 
   return (
     <div
@@ -40,25 +37,33 @@ const Cell = ({
         borderWidth: '1px 1px 0 0',
         textAlign: 'center',
         color: `rgb(0, 0, 0, ${ratio / 2 + 0.4})`,
-        overflow: 'hidden',
+        // overflow: 'hidden',
         boxSizing: 'border-box',
-        flexGrow: square ? 0 : 1,
-        flexBasis: square ? height : 0,
+        flexGrow: 1,
+        flexBasis: 0,
         flexShrink: 0,
         height: height,
+        width: width,
         lineHeight: height,
         borderRadius: '4px',
         fontSize: '.8rem',
         cursor: onClick ? 'pointer' : 'initial',
         background: `rgb(12, 160, 44, ${ratio + 0.05})`,
-        ...style(posX, posY, ratio)
+        ...cellStyle(posX, posY, ratio)
       }}
     >
-      <div>
-        {render(posX, posY, value)}
-        {renderTooltip(tooltip)}
+        <Tooltip
+          content={
+            <span >
+              {value} <br />
+             {tooltip} <br /> asdasd <br /> asdasdasddsa asd asd asd ads
+            </span>
+          }
+          direction="bottom"
+        >
+        {value}
+        </Tooltip>
       </div>
-    </div>
   )
 }
 
