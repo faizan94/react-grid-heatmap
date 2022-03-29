@@ -33,8 +33,6 @@ const Cell = ({
     <div
       onClick={() => (onClick || noop({}))(posX, posY)}
       style={{
-        border: '1px solid #fff',
-        borderWidth: '1px 1px 0 0',
         textAlign: 'center',
         color: `rgb(0, 0, 0, ${ratio / 2 + 0.4})`,
         // overflow: 'hidden',
@@ -45,7 +43,6 @@ const Cell = ({
         height: height,
         width: width,
         lineHeight: height,
-        borderRadius: '4px',
         fontSize: '.8rem',
         cursor: onClick ? 'pointer' : 'initial',
         background: `rgb(12, 160, 44, ${ratio + 0.05})`,

@@ -15,6 +15,8 @@ const Tooltip = (props: any) => {
     setActive(false);
   };
 
+  
+
   return (
     <div
       className="Tooltip-Wrapper"
@@ -28,16 +30,40 @@ const Tooltip = (props: any) => {
     >
       {/* Wrapping */}
       {props.children}
-      {active && (
+      {active && props.content && (
+        <div style={{
+          width: '0px',
+          height: '0px',
+          borderTop: '15px solid transparent',
+          borderBottom: '15px solid transparent',
+          borderRight: '20px solid #F5F5F5',
+
+          textAlign: 'left',
+          fontSize: '.8rem',
+          color: 'black',
+          position: 'absolute',
+          zIndex: 1989,
+          left: '95%',
+          right: 'calc(100% + var(40px))',
+          top: '50%',
+          transform: 'translateX(0) translateY(-50%)',
+          lineHeight: '20px',
+        }}></div>
+      )}
+
+      {active && props.content && (
+        
+
         <div style={{
           textAlign: 'left',
           fontSize: '.8rem',
-          backgroundColor: 'white',
+          backgroundColor: '#F5F5F5',
           whiteSpace: 'pre',
           color: 'black',
           position: 'absolute',
-          border: '4px solid white',
-          zIndex: 100000,
+          border: '6px solid #F5F5F5',
+          borderRadius: '4px',
+          zIndex: 1991,
           left: '110%',
           right: 'calc(100% + var(40px))',
           top: '50%',
