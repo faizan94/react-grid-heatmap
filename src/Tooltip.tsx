@@ -43,7 +43,7 @@ const Tooltip = (props: any) => {
           color: 'black',
           position: 'absolute',
           zIndex: 1989,
-          left: '95%',
+          left: '100%',
           right: 'calc(100% + var(40px))',
           top: '50%',
           transform: 'translateX(0) translateY(-50%)',

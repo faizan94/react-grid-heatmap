@@ -43,6 +43,7 @@ const Cell = ({
         height: height,
         width: width,
         lineHeight: height,
+        direction: 'ltr',
         fontSize: '.8rem',
         cursor: onClick ? 'pointer' : 'initial',
         background: `rgb(12, 160, 44, ${ratio + 0.05})`,
@@ -50,12 +51,7 @@ const Cell = ({
       }}
     >
         <Tooltip
-          content={
-            <span >
-              {value} <br />
-             {tooltip} <br /> asdasd <br /> asdasdasddsa asd asd asd ads
-            </span>
-          }
+          content={tooltip}
           direction="bottom"
         >
         {value}

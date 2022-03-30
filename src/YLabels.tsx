@@ -25,8 +25,10 @@ export default function YLabels({
         <div
           key={label}
           style={{
+            // width: '200px',
             boxSizing: 'border-box',
-            padding: '0 0.2rem',
+            padding: '0 0.4rem',
+            textAlign: 'left',
             lineHeight: height,
             ...yLabelsStyle(index)
           }}
