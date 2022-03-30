@@ -50,17 +50,23 @@ const Cell = ({
         ...cellStyle(posX, posY, ratio)
       }}
     >
+      {tooltip && (
         <Tooltip
           content={
             <span >
-             {tooltip}
+            {tooltip}
             </span>
           }
           direction="bottom"
         >
         {value}
         </Tooltip>
-      </div>
+      )}
+      {!tooltip && (
+        {value}
+      )}
+    </div>
+        
   )
 }
 

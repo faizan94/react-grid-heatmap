@@ -6,6 +6,7 @@ const Tooltip = (props: any) => {
 
   const showTip = () => {
     timeout = setTimeout(() => {
+      console.log(props.content);
       setActive(true);
     }, props.delay || 50);
   };
@@ -52,8 +53,6 @@ const Tooltip = (props: any) => {
       )}
 
       {active && props.content && (
-        
-
         <div style={{
           textAlign: 'left',
           fontSize: '.8rem',
