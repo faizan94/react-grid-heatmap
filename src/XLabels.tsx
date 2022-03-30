@@ -15,7 +15,7 @@ export default function XLabels({
 }: Props) {
   const widthPercent = `${100 / labels.length}%`
   return (
-    <div style={{ display: 'flex', textAlign: 'center' }}>
+    <div style={{ whiteSpace: 'pre', display: 'flex', textAlign: 'center' }}>
       {labels.map((label, index) => (
         <div
           key={label}
@@ -32,7 +32,7 @@ export default function XLabels({
         >
           {label}
         </div>
-      )).reverse()}
+      ))}
     </div>
   )
 }

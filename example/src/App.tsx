@@ -1,6 +1,6 @@
 import { HeatMapGrid } from 'react-grid-heatmap'
 
-const xLabels = new Array(100).fill(0).map((_, i) => `${i}`)
+const xLabels = new Array(100).fill(0).map((_, i) => `${i} \n asd`)
 const yLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
 const data = new Array(yLabels.length)
   .fill(0)

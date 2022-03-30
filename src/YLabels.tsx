@@ -27,6 +27,7 @@ export default function YLabels({
           title={label}
           style={{
             // width: '200px',
+            whiteSpace: 'pre',
             boxSizing: 'border-box',
             padding: '0 0.4rem',
             textAlign: 'left',

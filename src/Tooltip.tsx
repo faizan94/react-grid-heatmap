@@ -21,7 +21,6 @@ const Tooltip = (props: any) => {
 
   return (
     <div
-      className="Tooltip-Wrapper"
       onMouseEnter={showTip}
       onMouseLeave={hideTip}
       style={{
@@ -69,7 +68,7 @@ const Tooltip = (props: any) => {
           top: '50%',
           transform: 'translateX(0) translateY(-50%)',
           lineHeight: '20px',
-        }}className={`Tooltip-Tip`}>
+        }}>
           {/* Content */}
           {props.content}
         </div>
