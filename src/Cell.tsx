@@ -9,7 +9,7 @@ interface Props {
   cellStyle?: (x: number, y: number, ratio: number) => {}
   ratio: number
   value: number
-  tooltip?: string
+  tooltip?: any
   height?: string
   width?: string
   onClick?: (x: number, y: number) => void
@@ -50,8 +50,9 @@ const Cell = ({
         ...cellStyle(posX, posY, ratio)
       }}
     >
-      {tooltip && (
+      
         <Tooltip
+          value={tooltip}
           content={
             <span >
             {tooltip}
@@ -61,10 +62,9 @@ const Cell = ({
         >
         {value}
         </Tooltip>
-      )}
-      {!tooltip && (
+      {/* {!tooltip && (
         {value}
-      )}
+      )} */}
     </div>
         
   )

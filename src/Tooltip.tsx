@@ -5,10 +5,11 @@ const Tooltip = (props: any) => {
   const [active, setActive] = useState(false);
 
   const showTip = () => {
-    timeout = setTimeout(() => {
-      console.log(props.content);
-      setActive(true);
-    }, props.delay || 50);
+    if(props.value != NaN && props.value!= null){
+      timeout = setTimeout(() => {
+        setActive(true);
+      }, props.delay || 50);
+    }
   };
 
   const hideTip = () => {

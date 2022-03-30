@@ -11,7 +11,7 @@ interface Props {
   data: number[][]
   xLabels?: string[]
   yLabels?: string[]
-  tooltip?: string[][]
+  tooltip?: any[][]
   cellHeight?: string
   cellWidth?: string
   xLabelsPos?: 'top' | 'bottom'
