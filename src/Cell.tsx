@@ -51,7 +51,11 @@ const Cell = ({
       }}
     >
         <Tooltip
-          content={tooltip}
+          content={
+            <span >
+             {tooltip}
+            </span>
+          }
           direction="bottom"
         >
         {value}
