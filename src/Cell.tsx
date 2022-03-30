@@ -6,7 +6,7 @@ interface Props {
   renderTooltip?: (value: string | undefined) => {}
   posX: number
   posY: number
-  cellStyle?: (x: number, y: number, ratio: number) => {}
+  cellStyle?: (x: number, y: number, ratio?: number, value?: number) => {}
   ratio: number
   value: number
   tooltip?: any
@@ -47,7 +47,7 @@ const Cell = ({
         fontSize: '.8rem',
         cursor: onClick ? 'pointer' : 'initial',
         background: `rgb(12, 160, 44, ${ratio + 0.05})`,
-        ...cellStyle(posX, posY, ratio)
+        ...cellStyle(posX, posY, ratio=ratio, value=value)
       }}
     >
       

@@ -18,7 +18,7 @@ interface Props {
   yLabelsPos?: 'left' | 'right'
   xLabelsStyle?: (index: number) => {}
   yLabelsStyle?: (index: number) => {}
-  cellStyle?: (x: number, y: number, ratio: number) => {}
+  cellStyle?: (x: number, y: number, ratio?: number, value?:number) => {}
   cellRender?: (x: number, y: number, value: number) => {}
   onClick?: (x: number, y: number) => void
 }
