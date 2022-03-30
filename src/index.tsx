@@ -94,9 +94,9 @@ export const HeatMapGrid = ({
                   cellStyle={cellStyle}
                   ratio={(value - min) / minMaxDiff}
                 />
-              ))}
+              )).reverse()}
             </Row>
-          ))}
+          )).reverse()}
         </Column>
       </Column>
     </Row>

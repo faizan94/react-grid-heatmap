@@ -32,7 +32,7 @@ export default function XLabels({
         >
           {label}
         </div>
-      ))}
+      )).reverse()}
     </div>
   )
 }

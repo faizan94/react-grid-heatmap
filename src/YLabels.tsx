@@ -35,7 +35,7 @@ export default function YLabels({
         >
           {label}
         </div>
-      ))}
+      )).reverse()}
     </div>
   )
 }
