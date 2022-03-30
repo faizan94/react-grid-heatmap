@@ -24,6 +24,7 @@ export default function YLabels({
       {labels.map((label, index) => (
         <div
           key={label}
+          title={label}
           style={{
             // width: '200px',
             boxSizing: 'border-box',
