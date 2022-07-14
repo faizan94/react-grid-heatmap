@@ -1,4 +1,7 @@
 
+Takend from react-grid-heatmap github repo
+https://github.com/arunghosh/react-grid-heatmap
+
 # react-grid-heatmap
 
 A React component to visualize heatmap in a grid layout without using any 3rd party libraries.
