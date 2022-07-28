@@ -5,12 +5,14 @@ interface Props {
   xLabelsStyle?: (index: number) => {}
   square?: boolean
   height: string
+  xyProminent: boolean
 }
 
 export default function XLabels({
   labels,
   xLabelsStyle = () => ({}),
   height,
+  xyProminent,
   square = false
 }: Props) {
   const widthPercent = `${100 / labels.length}%`
@@ -20,6 +22,7 @@ export default function XLabels({
         <div
           key={label}
           style={{
+            transform: xyProminent? 'scale(1.5)' : 'scale(1)',
             padding: '0.2rem 0',
             boxSizing: 'border-box',
             flexGrow: square ? 'initial' : 1,

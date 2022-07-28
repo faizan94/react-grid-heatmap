@@ -11,9 +11,11 @@ interface Props {
   data: number[][]
   xLabels?: string[]
   yLabels?: string[]
+  yLabelsInfo?: string[] | []
   tooltip?: any[][]
   cellHeight?: string
   cellWidth?: string
+  xyProminent?: boolean
   xLabelsPos?: 'top' | 'bottom'
   yLabelsPos?: 'left' | 'right'
   xLabelsStyle?: (index: number) => {}
@@ -34,11 +36,13 @@ export const HeatMapGrid = ({
   data,
   xLabels,
   yLabels,
+  yLabelsInfo = [],
   tooltip,
   xLabelsPos = 'top',
   yLabelsPos = 'left',
   cellHeight = '3rem',
   cellWidth = '3rem',
+  xyProminent = false,
   xLabelsStyle,
   yLabelsStyle,
   cellStyle,
@@ -62,8 +66,10 @@ export const HeatMapGrid = ({
           <YLabels
             reverse={isYLabelReverse}
             labels={yLabels}
+            labelsInfo={yLabelsInfo}
             height={cellHeight}
             yLabelsStyle={yLabelsStyle}
+            xyProminent={xyProminent}
           />
         </YLabelAligner>
       )}
@@ -74,6 +80,7 @@ export const HeatMapGrid = ({
               labels={xLabels}
               xLabelsStyle={xLabelsStyle}
               height={cellHeight}
+              xyProminent={xyProminent}
             />
           )}
         </div>

@@ -1,7 +1,11 @@
 import { HeatMapGrid } from 'react-grid-heatmap'
 
 const xLabels = new Array(100).fill(0).map((_, i) => `${i} du`)
+
 const yLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+
+const yLabelsInfo = ['Sun 2018\nasdb', 'Mon\n asd', 'Tue', 'Wed\nasd', 'Thu', 'Fri']
+
 const data = new Array(yLabels.length)
   .fill(0)
   .map(() =>
@@ -37,6 +41,7 @@ const App = () => {
         data={data}
         xLabels={xLabels}
         yLabels={yLabels}
+        yLabelsInfo={yLabelsInfo}
         // Reder cell with tooltip
         tooltip={tooltip}
         cellRender={(x, y, value) => (
