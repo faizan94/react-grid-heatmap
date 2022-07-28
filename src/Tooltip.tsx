@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Tooltip = (props: any) => {
   let timeout: any;
-  let align = props.align || 'left';
+  let align = props.align || 'right';
 
   const [active, setActive] = useState(false);
 
@@ -35,7 +35,7 @@ const Tooltip = (props: any) => {
           transform: 'scale(1.1)',
         }}
       >{props.children}</div>) : (<div>{props.children}</div>)}
-      {active && props.content && align=='left' && (
+      {active && props.content && align=='right' && (
         <div style={{
           width: '0px',
           height: '0px',
@@ -66,8 +66,8 @@ const Tooltip = (props: any) => {
           border: '6px solid #F5F5F5',
           borderRadius: '4px',
           zIndex: 1991,
-          left: align==='right'?'':'110%',
-          right: align==='right'?'100%':'calc(100% + var(40px))',
+          left: align==='left'?'':'110%',
+          right: align==='left'?'100%':'calc(100% + var(40px))',
           top: '50%',
           transform: 'translateX(0) translateY(-50%)',
           lineHeight: '20px',
