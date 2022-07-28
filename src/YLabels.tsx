@@ -43,7 +43,7 @@ export default function YLabels({
               ...yLabelsStyle(index)
             }}
           >
-            {labelsInfo ? (
+            {labelsInfo.length ? (
               <Tooltip
                 value={labelsInfo[index]}
                 content={<span>{labelsInfo[index]}</span>}
