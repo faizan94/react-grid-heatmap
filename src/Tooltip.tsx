@@ -30,7 +30,11 @@ const Tooltip = (props: any) => {
       }}
     >
       {/* Wrapping */}
-      {props.children}
+      {active ? (<div
+        style={{
+          transform: 'scale(1.4)',
+        }}
+      >{props.children}</div>) : (<div>{props.children}</div>)}
       {active && props.content && (
         <div style={{
           width: '0px',
@@ -38,7 +42,6 @@ const Tooltip = (props: any) => {
           borderTop: '15px solid transparent',
           borderBottom: '15px solid transparent',
           borderRight: '20px solid #F5F5F5',
-
           textAlign: 'left',
           fontSize: '.8rem',
           color: 'black',

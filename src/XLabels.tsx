@@ -25,6 +25,7 @@ export default function XLabels({
             flexGrow: square ? 'initial' : 1,
             overflow: 'hidden',
             flexShrink: 1,
+            cursor: 'pointer',
             flexBasis: square ? height : widthPercent,
             width: square ? height : widthPercent,
             ...xLabelsStyle(index)

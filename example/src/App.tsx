@@ -1,6 +1,6 @@
 import { HeatMapGrid } from 'react-grid-heatmap'
 
-const xLabels = new Array(100).fill(0).map((_, i) => `${i} \n asd`)
+const xLabels = new Array(100).fill(0).map((_, i) => `${i} du`)
 const yLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
 const data = new Array(yLabels.length)
   .fill(0)
@@ -43,8 +43,8 @@ const App = () => {
           <div title={`Pos(${x}, ${y}) = ${value}`}>{value}</div>
         )}
 
-        xLabelsStyle={index => ({
-          color: index % 2 ? 'transparent' : '#777',
+        xLabelsStyle={() => ({
+          color: '#777',
           fontSize: ".8rem"
         })}
         yLabelsStyle={() => ({
