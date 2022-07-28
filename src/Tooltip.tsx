@@ -32,7 +32,7 @@ const Tooltip = (props: any) => {
       {/* Wrapping */}
       {active ? (<div
         style={{
-          transform: 'scale(1.3)',
+          transform: 'scale(1.1)',
         }}
       >{props.children}</div>) : (<div>{props.children}</div>)}
       {active && props.content && (
