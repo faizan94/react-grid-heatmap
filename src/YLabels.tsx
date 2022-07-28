@@ -47,6 +47,7 @@ export default function YLabels({
               <Tooltip
                 value={labelsInfo[index]}
                 content={<span>{labelsInfo[index]}</span>}
+                align='right'
                 direction='bottom'
               >
                 {label} <FaInfoCircle />
